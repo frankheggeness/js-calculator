@@ -63,3 +63,82 @@
    * Validation
    */
 
+  function calculatorModule(){
+    var memory = 0
+    var total = 0
+    var calculator = {}
+    
+    var load = function(x){
+        if(typeof x === 'number'){
+            total = x;
+            return total;
+        }else{
+            throw error
+        }
+    }
+    var getTotal = function(x){
+        // if(typeof x === 'number'){
+        //     total += x
+        //     return total;
+        // }else{
+        //     throw error;
+        // }
+        return total
+    }
+    var add = function(x){
+        if(typeof x === 'number'){
+            total += x;
+            return total
+        }else{
+            throw error;
+        }
+
+    }
+    var subtract = function(x){
+        if(typeof x === 'number'){
+            total -= x;
+            return total;
+        }else{
+            throw error;
+        }
+    }
+    var multiply = function(x){
+        if(typeof x === 'number'){
+            total *= x;
+            return total;
+        }else{
+            throw error;
+        }
+    }
+    var divide =function(x){
+        if(typeof x === 'number'){
+            total /= x;
+            return total;
+        }else{
+            throw error;
+        }
+    }
+    var recallMemory = function(){
+        return memory;
+    }
+    var saveMemory = function(x){
+        memory = total;
+        return memory;
+    }
+    var clearMemory =function(){
+        memory = 0;
+        return memory;
+    }
+
+    return{
+        load:load,
+        getTotal: getTotal,
+        add: add,
+        subtract: subtract,
+        multiply: multiply,
+        divide: divide,
+        recallMemory: recallMemory,
+        saveMemory: saveMemory,
+        clearMemory: clearMemory,
+    }
+}
